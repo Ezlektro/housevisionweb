@@ -4,40 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Vision - Nuestro Equipo</title>
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp-icon {
-            width: 35px;
-            height: 35px;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/51933430603?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" 
-   class="whatsapp-float" target="_blank">
-    <img src="./images/whatsapplogo.png" alt="WhatsApp" class="whatsapp-icon">
-</a>
+  <div class="float-container">
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/51906224004?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
+        class="float-btn whatsapp" target="_blank">
+        <img src="./images/whatsapplogo.png" class="float-icon">
+        <span class="float-label">SARITA</span>
+    </a>
+
+    <!-- LLAMAR -->
+    <a href="https://wa.me/51955076853?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
+        class="float-btn whatsapp" target="_blank">
+        <img src="./images/whatsapplogo.png" class="float-icon">
+        <span class="float-label">DIANIRA</span>
+    </a>
+
+</div>
 
     <!-- Fuentes y estilos -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,700" rel="stylesheet">
@@ -60,11 +46,9 @@
                             </a>
                         </section>
                         <section class="navbar-section hide-sm">
-                            <a class="btn btn-link" href="index.html">Inicio</a>
-                            <a class="btn btn-link" href="index.html#requisitos">Requisitos</a>
-                            <a class="btn btn-link" href="index.html#price">Precios</a>
-                            <a class="btn btn-link active" href="#">Nuestro Equipo</a>
-                            <a class="btn btn-link" href="#contacto">Contacto</a>
+                            <a class="btn btn-link" href="proyectos.html">Nuestros Proyectos</a>
+                            <a class="btn btn-link" href="equipo.html">Nuestro Equipo</a>
+                            <a class="btn btn-link" href="#contacto">Contáctanos</a>
                         </section>
                     </header>
                 </div>
@@ -75,7 +59,7 @@
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="container yeo-body" style="min-height: 25vh; text-align:center; padding: 4rem 0 2rem;">
-        <h1 style="color:#2E2E2E; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+        <h1 class="titulo-seccion" style="margin-top: 0rem;">
             Nuestro Equipo
         </h1>
         <p style="color:#555; max-width:800px; margin:1rem auto;">
@@ -134,56 +118,67 @@
 
 
     <!-- FOOTER -->
-    <div style="margin-top: 3rem;"></div> <!-- Espacio antes del footer -->
+    <div style="margin-top: 8rem;"></div> <!-- Espacio antes del footer -->
     <div class="yeo-footer" id="contacto">
-        <div class="container">
-            <div class="columns">
+  <div class="container">
+    <div class="columns">
 
-                <!-- Redes sociales -->
-                <div class="column col-4 col-sm-12">
-                    <div class="yeo-footer-content">
-                        <h4>Redes Sociales</h4>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a href="https://www.instagram.com/housevision.cix/" target="_blank">📸 Instagram</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.facebook.com/HOUSEvison" target="_blank">📘 Facebook</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- Redes sociales -->
+      <div class="column col-4 col-sm-12">
+        <div class="yeo-footer-content">
+          <h4 class="footer-title">Redes Sociales</h4>
+          <ul class="nav">
+            <li class="nav-item tiktok-item">
+                <img src="./images/Tiktoklogo.png" alt="TikTok" class="tiktok-icon">
 
-                <!-- Informes -->
-                <div class="column col-4 col-sm-12">
-                    <div class="yeo-footer-content">
-                        <h4>Contacto</h4>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a href="#">📞 Teléfono: 912 199 231</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="https://www.tiktok.com/@housevisioncix" target="_blank" class="tiktok-user">
+                 @housevisioncix
+                </a>
 
-                <!-- Dirección -->
-                <div class="column col-4 col-sm-12">
-                    <div class="yeo-footer-content">
-                        <h4>Oficina</h4>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a href="#">📍 LAS COMPUERTAS 125 B, Urb. Federico Villareal, Chiclayo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#">🕒 Lunes a Sábado, 9:00 a.m. - 6:00 p.m.</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+                <a href="https://www.tiktok.com/@housevisioncix" target="_blank" class="tiktok-btn">
+                Seguir
+                </a>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Informes -->
+      <div class="column col-4 col-sm-12">
+        <div class="yeo-footer-content">
+          <h4 class="footer-title">Contáctanos</h4>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">📞 906 224 004</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">📞 955 076 853</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="column col-4 col-sm-12">
+        <div class="yeo-footer-content">
+          <h4 class="footer-title">Oficinas</h4>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">📍 Tacna 653, Chiclayo</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">🕒 Lunes a Viernes: 9:00 a.m. - 6:00 p.m.</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">🕒 Sábado: 9:00 a.m. - 5:00 p.m.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
+  </div>
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const elementos = document.querySelectorAll('.fade-in');

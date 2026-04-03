@@ -21,40 +21,26 @@
     <meta property="og:site_name" content="">
     <meta property="og:type" content="product">
     <meta property="og:image" content="">
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp-icon {
-            width: 35px;
-            height: 35px;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/51933430603?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" 
-   class="whatsapp-float" target="_blank">
-    <img src="./images/whatsapplogo.png" alt="WhatsApp" class="whatsapp-icon">
-</a>
+<div class="float-container">
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/51906224004?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
+        class="float-btn whatsapp" target="_blank">
+        <img src="./images/whatsapplogo.png" class="float-icon">
+        <span class="float-label">SARITA</span>
+    </a>
+
+    <!-- LLAMAR -->
+    <a href="https://wa.me/51955076853?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
+        class="float-btn whatsapp" target="_blank">
+        <img src="./images/whatsapplogo.png" class="float-icon">
+        <span class="float-label">DIANIRA</span>
+    </a>
+
+</div>
     <div class="yeo-slogan">
         <div class="container yeo-header">
             <div class="columns">
@@ -70,9 +56,9 @@
     <section class="navbar-section hide-sm">
         <!-- Nuevo menú funcional -->
         <a class="btn btn-link" href="#requisitos">Requisitos</a>
-        <a class="btn btn-link" href="#price">Precios</a>
+        <a class="btn btn-link" href="proyectos.html">Nuestros Proyectos</a>
         <a class="btn btn-link" href="equipo.html">Nuestro Equipo</a>
-        <a class="btn btn-link" href="#contacto">Contacto</a>
+        <a class="btn btn-link" href="#contacto">Contáctanos</a>
     </section>
 </header>
                 </div>
@@ -88,7 +74,7 @@
                             <span class="slogan-bold">Casas con techo propio en Chiclayo</span><br>
                         </h1>
                         <p>En <strong>House Vision</strong> Accede a tu casa propia con Techo Propio en Chiclayo</p>
-                        <a class="btn btn-primary btn-lg btn-start" href="#lugares">Ver lugares cercanos</a>
+                        <a class="btn btn-primary btn-lg btn-start" href="proyectos.html">VER NUESTROS PROYECTOS</a>
                     </div>
                 </div>
                 <div class="column col-5 hide-sm">
@@ -102,7 +88,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column col-12 fade-in">
-                    <h2 class="feature-title">REQUISITOS PARA CALIFICAR</h2>
+                    <h2 class="titulo-seccion" style="margin-top: 2rem;">REQUISITOS PARA CALIFICAR</h2>
                     <p class="feature-subtitle">
                         Para acceder a nuestros proyectos con <strong>Techo Propio</strong>, los postulantes deben cumplir los siguientes requisitos:
                     </p>
@@ -193,7 +179,7 @@
         <div class="container yeo-body">
             <div class="columns">
                 <div class="column col-12 text-center fade-in">
-                    <h2 class="feature-title">LUGARES CERCANOS</h2>
+                    <h2 class="titulo-seccion" style="margin-top: 2rem;">LUGARES CERCANOS</h2>
                     <p class="feature-subtitle">
                         Descubre los puntos más importantes cerca de nuestro proyecto <strong>Santa Cecilia de Pimentel</strong>.
                     </p>
@@ -239,7 +225,7 @@
 
     <!-- NUEVA SECCIÓN: FAMILIAS QUE YA INVIRTIERON -->
     <div class="familias-section" id="familias">
-    <h2 class="feature-title fade-in">FAMILIAS QUE YA INVIRTIERON</h2>
+    <h2 class="titulo-seccion" style="margin-top: 2rem;">FAMILIAS QUE YA INVIRTIERON</h2>
     <p class="feature-subtitle fade-in">Conoce a quienes ya confiaron en <strong>House Vision</strong></p>
 
     <div class="carousel fade-in">
@@ -267,13 +253,18 @@
       <!-- Redes sociales -->
       <div class="column col-4 col-sm-12">
         <div class="yeo-footer-content">
-          <h4>Redes Sociales</h4>
+          <h4 class="footer-title">Redes Sociales</h4>
           <ul class="nav">
-            <li class="nav-item">
-              <a href="https://www.instagram.com/housevision.cix/" target="_blank" class="footer-link">📸 Instagram</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.facebook.com/HOUSEvison" target="_blank" class="footer-link">📘 Facebook</a>
+            <li class="nav-item tiktok-item">
+                <img src="./images/Tiktoklogo.png" alt="TikTok" class="tiktok-icon">
+
+                <a href="https://www.tiktok.com/@housevisioncix" target="_blank" class="tiktok-user">
+                 @housevisioncix
+                </a>
+
+                <a href="https://www.tiktok.com/@housevisioncix" target="_blank" class="tiktok-btn">
+                Seguir
+                </a>
             </li>
           </ul>
         </div>
@@ -282,10 +273,13 @@
       <!-- Informes -->
       <div class="column col-4 col-sm-12">
         <div class="yeo-footer-content">
-          <h4>Contacto</h4>
+          <h4 class="footer-title">Contáctanos</h4>
           <ul class="nav">
             <li class="nav-item">
-              <a href="javascript:void(0)" class="footer-link">📞 Teléfono: 933 430 603</a>
+              <a href="javascript:void(0)" class="contact-text">📞 906 224 004</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">📞 955 076 853</a>
             </li>
           </ul>
         </div>
@@ -294,13 +288,16 @@
       <!-- Dirección -->
       <div class="column col-4 col-sm-12">
         <div class="yeo-footer-content">
-          <h4>Oficina</h4>
+          <h4 class="footer-title">Oficinas</h4>
           <ul class="nav">
             <li class="nav-item">
-              <a href="javascript:void(0)" class="footer-link">📍 LAS COMPUERTAS 125 B, Urb. Federico Villareal, Chiclayo</a>
+              <a href="javascript:void(0)" class="contact-text">📍 Tacna 653, Chiclayo</a>
             </li>
             <li class="nav-item">
-              <a href="javascript:void(0)" class="footer-link">🕒 Lunes a Sábado, 9:00 a.m. - 6:00 p.m.</a>
+              <a href="javascript:void(0)" class="contact-text">🕒 Lunes a Viernes: 9:00 a.m. - 6:00 p.m.</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="contact-text">🕒 Sábado: 9:00 a.m. - 5:00 p.m.</a>
             </li>
           </ul>
         </div>
