@@ -1167,3 +1167,124 @@ html {
     50% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
+
+
+
+/*ORBITAS*/
+/* CONTENEDOR PRINCIPAL */
+.orbita-container {
+    position: relative;
+    width: 1100px;
+    height: 800px;
+    margin: 3rem auto;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+/* PLANETAS */
+.planeta {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/* IMÁGENES REDONDAS */
+.planeta img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* HOVER */
+.planeta img:hover {
+    transform: scale(1.1);
+}
+
+
+/* NOMBRE */
+.nombre {
+    display: block;
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* CENTRO */
+.centro {
+    top: 50%;
+    left: 50%;
+}
+
+.centro img {
+    width: 250px;
+    height: 250px;
+}
+
+/* 8 PUNTOS PERFECTOS */
+.p1 { top: 5%;  left: 50%; }   /* arriba */
+.p2 { top: 20%; left: 80%; }
+.p3 { top: 50%; left: 105%; }   /* derecha */
+.p4 { top: 80%; left: 80%; }
+.p5 { top: 95%; left: 50%; }   /* abajo */
+.p6 { top: 80%; left: 20%; }
+.p7 { top: 50%; left: -65px; }    /* izquierda */
+.p8 { top: 20%; left: 20%; }
+
+.planeta {
+    position: absolute;
+}
+
+.planeta::after {
+    content: attr(data-info);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.planeta:hover::after {
+    opacity: 1;
+}
+
+.planeta::after {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ESTADO INICIAL BASE */
+.planeta {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s ease;
+}
+
+/* IZQUIERDA */
+.planeta.izquierda {
+    transform: translate(-50%, -50%) translateX(-150px);
+}
+
+/* DERECHA */
+.planeta.derecha {
+    transform: translate(-50%, -50%) translateX(150px);
+}
+
+/* ZOOM */
+.planeta.zoom {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* CUANDO APARECE */
+.planeta.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
