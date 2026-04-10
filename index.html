@@ -176,52 +176,34 @@
 </div>
 
     <div class="yeo-team" id="lugares">
-        <div class="container yeo-body">
-            <div class="columns">
-                <div class="column col-12 text-center fade-in">
-                    <h2 class="titulo-seccion" style="margin-top: 2rem;">LUGARES CERCANOS</h2>
-                    <p class="feature-subtitle">
-                        Descubre los puntos más importantes cerca de nuestro proyecto <strong>Santa Cecilia de Pimentel</strong>.
-                    </p>
-                </div>
+    <div class="container yeo-body">
+
+        <h2 class="titulo-seccion">LUGARES CERCANOS</h2>
+        <p class="feature-subtitle">
+            Descubre lo que rodea nuestro proyecto <strong>Santa Cecilia de Pimentel</strong>
+        </p>
+
+        <div class="orbita-container">
+
+            <!-- CENTRO -->
+            <div class="planeta centro zoom">
+                <img src="./images/centro.jpeg" alt="Proyecto">
+                <span class="nombre">Tu Hogar</span>
             </div>
 
-            <div class="columns text-center">
-                <div class="column col-3 col-sm-12">
-                    <div class="card fade-in">
-                        <img class="img-responsive" src="./images/usmp.webp" alt="USMP">
-                        <div class="card-header">
-                            <h5>UNIVERSIDAD DE SAN MARTÍN DE PORRES</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="column col-3 col-sm-12">
-                    <div class="card fade-in">
-                        <img class="img-responsive" src="./images/mall.webp" alt="Mall Aventura Cix">
-                        <div class="card-header">
-                            <h5>MALL AVENTURA CIX</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="column col-3 col-sm-12">
-                    <div class="card fade-in">
-                        <img class="img-responsive" src="./images/autonoma.webp" alt="Universidad Autónoma">
-                        <div class="card-header">
-                            <h5>FUTURA UNIVERSIDAD AUTÓNOMA DE CHICLAYO</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="column col-3 col-sm-12">
-                    <div class="card fade-in">
-                        <img class="img-responsive" src="./images/ucv.webp" alt="UCV">
-                        <div class="card-header">
-                            <h5>UNIVERSIDAD CÉSAR VALLEJO</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- ALREDEDOR -->
+            <div class="planeta p1 zoom" data-info="A 5 minutos"><img src="./images/usmp.webp"><span class="nombre">USMP</span></div>
+            <div class="planeta p2 derecha" data-info="A 5 minutos"><img src="./images/mall.webp"><span class="nombre">Mall Aventura</span></div>
+            <div class="planeta p3 derecha" data-info="A 5 minutos"><img src="./images/autonoma.webp"><span class="nombre">Autónoma</span></div>
+            <div class="planeta p4 derecha" data-info="A 5 minutos"><img src="./images/ucv.webp"><span class="nombre">UCV</span></div>
+            <div class="planeta p5 zoom" data-info="A 5 minutos"><img src="./images/senati.webp"><span class="nombre">SENATI</span></div>
+            <div class="planeta p6 izquierda" data-info="A 5 minutos"><img src="./images/uss.webp"><span class="nombre">USS</span></div>
+            <div class="planeta p7 izquierda" data-info="A 5 minutos"><img src="./images/utp.webp"><span class="nombre">UTP</span></div>
+            <div class="planeta p8 izquierda" data-info="A 5 minutos"><img src="./images/hospitalregional.webp"><span class="nombre">Hospital Regional</span></div>
+
         </div>
     </div>
+</div>
 
     <!-- NUEVA SECCIÓN: FAMILIAS QUE YA INVIRTIERON -->
     <div class="familias-section" id="familias">
@@ -355,6 +337,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ajustar al cambiar tamaño pantalla
     window.addEventListener("resize", updateCarousel);
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const planetas = document.querySelectorAll('.planeta');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show'); // 👈 efecto inverso
+            }
+        });
+    }, { threshold: 0.2 });
+
+    planetas.forEach(p => observer.observe(p));
 });
 </script>
 </body>
