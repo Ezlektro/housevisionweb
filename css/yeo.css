@@ -40,14 +40,6 @@ a:active {
     text-align: center;
 }
 
-
-.navbar .navbar-brand.logo {
-    font-weight: 400;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-}
-
 .logo-img {
     padding-right: 10px;
     display: inline-block;
@@ -117,7 +109,11 @@ a:active {
 
 .slogan .slogan-bold {
     color: #ffffff;
-    font-size: 50px;
+    font-size: 60px;
+    font-family: "Anton", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 3px;
 }
 
 
@@ -143,20 +139,6 @@ a:active {
     margin: 0 auto 2rem;
 }
 
-.yeo-header .navbar {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 1.5rem 0 1rem 0;
-    font-weight: 600;  /* Le da más presencia */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra suave para contraste */
-}
-
-.yeo-header .navbar-section .btn.btn-link {
-    color: #fff;
-    padding: .25rem 1.2rem;
-    opacity: .9;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
 
 .yeo-header .btn-hire-me {
     background: #00bc9e;
@@ -491,12 +473,6 @@ a:active {
     }
 
 }
-.yeo-header .navbar-section a,
-.yeo-header .navbar-brand span {
-    font-size: 1rem !important;
-    font-weight: 600;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
 .yeo-footer {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -546,10 +522,33 @@ html, body {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-#requisitos img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.15)); /* brillo dorado */
+#requisitos {
+    background: linear-gradient(#fff8e1);
+    padding: 3rem 0;
 }
+@keyframes mover-izq-der {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(8px); }
+    100% { transform: translateX(0); }
+}
+
+/* aplicas animación */
+.anim-izq {
+    animation: mover-izq-der 4s ease-in-out infinite;
+}
+.img-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.5) rotate(-3deg);
+}
+
+.bg-suave {
+    background: linear-gradient(#fff8e1);
+    padding: 3rem 0;
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(40px);
@@ -642,11 +641,6 @@ html, body {
 
 .slogan-img:hover {
     transform: scale(1.05); /* pequeño zoom */
-}
-.navbar-brand.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;        /* espacio entre imagen y texto */
 }
 
 .logo-img {
@@ -1335,6 +1329,7 @@ html {
     padding: 1rem;
     background: #fff;
     transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .team-card img {
@@ -1533,7 +1528,7 @@ html {
 }
 .tiktok-preview {
     margin-top: 15px;
-    width: 100%;
+    width: 94%;
     max-width: 400px;
     height: 200px;
     overflow-y: auto; /* 👈 scroll con la rueda */
@@ -1555,4 +1550,349 @@ html {
 
 .tiktok-preview::-webkit-scrollbar {
     display: none; /* Chrome, Edge, Safari */
+}
+
+/* ADAPTACIÓN A MOVIL */
+
+@media (max-width: 768px) {
+    .orbita-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 2rem auto;
+    }
+
+    .planeta {
+        position: static;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .planeta img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nombre {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .float-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .float-label,
+    .float-label2 {
+        font-size: 9px;
+    }
+}
+@media (max-width: 768px) {
+    .slogan .slogan-bold {
+        font-size: 28px;
+    }
+
+    .btn-proyecto {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-3d-track {
+        height: 300px;
+    }
+
+    .carousel-item {
+        width: 200px;
+        height: 280px;
+    }
+
+    .carousel-item.left {
+        transform: translate(-50%, -50%) translateX(-120px) scale(0.8);
+    }
+
+    .carousel-item.right {
+        transform: translate(-50%, -50%) translateX(120px) scale(0.8);
+    }
+}
+@media (max-width: 768px) {
+    .icono-titulo {
+        width: 80px;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 768px) {
+
+    /* SUBTÍTULO */
+    .feature-subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    /* TÍTULOS DE CADA BLOQUE */
+    .feature-title {
+        font-size: 14px;
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+
+    /* IMÁGENES MÁS PEQUEÑAS */
+    #requisitos img {
+        max-width: 50px;
+    }
+
+    /* MENOS ESPACIO ENTRE BLOQUES */
+    #requisitos .column {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .titulo-seccion {
+        font-size: 30px;
+        margin: 2rem 0 1rem;
+        letter-spacing: 1px;
+    }
+}
+@media (max-width: 768px) {
+
+    /* TARJETA */
+    .panel-body {
+        padding: 15px !important;
+    }
+
+    /* TEXTO PRINCIPAL */
+    .panel-body p {
+        font-size: 14px !important;
+        margin-bottom: 15px;
+    }
+
+    /* LISTA */
+    .panel-body ul {
+        font-size: 15px !important;
+        line-height: 1.6;
+        padding-left: 15px;
+    }
+
+    /* TÍTULO */
+    .panel-body h3 {
+        font-size: 18px;
+        margin-bottom: -10px !important;
+    }
+
+    /* PRECIO */
+    .panel-footer span {
+        font-size: 18px !important;
+    }
+
+    /* IMAGEN */
+    .yeo-work img {
+        height: auto !important;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 768px) {
+
+    /* TÍTULOS */
+    .footer-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* LÍNEA */
+    .footer-title::after {
+        width: 210px;
+        height: 2px;
+    }
+
+    /* TEXTOS */
+    .contact-text {
+        font-size: 14px;
+    }
+
+    .tiktok-user {
+        font-size: 20px;
+    }
+
+    .tiktok-btn {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+
+    /* ICONOS */
+    .tiktok-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* ESPACIADO ENTRE BLOQUES */
+    .yeo-footer-content {
+        margin-bottom: 20px;
+    }
+
+    /* PREVIEW MÁS PEQUEÑO */
+    .tiktok-preview {
+        height: 140px;
+    }
+
+}
+
+
+/* NAVBAR BASE */
+.navbar-brand.logo span {
+    font-size: 1.2rem;   /* súbelo a 1.8rem si lo quieres más grande */
+    font-weight: 700;
+}
+.navbar-brand.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;        /* espacio entre imagen y texto */
+}
+.navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+}
+
+/* MENÚ */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+/* LOGO */
+.navbar-brand.logo span {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* LINKS DEL MENÚ */
+.nav-menu a {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* HAMBURGUESA */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* 📱 NAVBAR MÓVIL */
+@media (max-width: 768px) {
+
+    /* BOTÓN HAMBURGUESA */
+    .nav-toggle {
+        display: block;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease;
+        z-index: 10000;
+    }
+
+    .nav-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    /* MENÚ OVERLAY */
+    .nav-menu {
+        position: fixed;              /* 🔥 CLAVE */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;                /* 🔥 ocupa toda la pantalla */
+
+        background: rgba(250, 179, 51, 0.95);
+        backdrop-filter: blur(10px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+        padding: 20px;
+
+        z-index: 9999;
+
+        /* animación */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    /* CUANDO SE ABRE */
+    .nav-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* LINKS */
+    .nav-menu a {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* HOVER */
+    .nav-menu a:hover {
+        transform: scale(1.1);
+        color: #000;
+    }
+}
+
+/* BLOQUEAR SCROLL CUANDO MENÚ ESTÁ ABIERTO */
+.no-scroll {
+    overflow: hidden;
 }
