@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="./css/spectre-icons.css">
     <link rel="stylesheet" href="./css/spectre-exp.css">
     <link rel="stylesheet" href="./css/yeo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <meta property="og:title" content="">
     <meta property="og:url" content="">
     <meta property="og:description" content="">
@@ -51,22 +55,30 @@
         <div class="container yeo-header">
             <div class="columns">
                 <div class="column col-sm-12">
-                    <header class="navbar">
-    <section class="navbar-section">
-        <a class="navbar-brand logo" href="index.html">
-            <img class="logo-img" src="./images/logo.webp" alt="">
-            <span>House Vision</span>
-        </a>
-    </section>
+                        <header class="navbar-custom">
 
-    <section class="navbar-section hide-sm">
-        <!-- Nuevo menú funcional -->
-        <a class="btn btn-link" href="#requisitos">Requisitos</a>
-        <a class="btn btn-link" href="index.html">Nuestros Proyectos</a>
-        <a class="btn btn-link" href="equipo.html">Nuestro Equipo</a>
-        <a class="btn btn-link" href="#contacto">Contáctanos</a>
-    </section>
-</header>
+                        <!-- LOGO -->
+                        <div class="nav-left">
+                            <a class="navbar-brand logo" href="index.html">
+                                <img class="logo-img" src="./images/logo.webp" alt="">
+                                <span>House Vision</span>
+                            </a>
+                        </div>
+
+                        <!-- BOTÓN HAMBURGUESA -->
+                        <div class="nav-toggle" id="navToggle">
+                            ☰
+                        </div>
+
+                        <!-- MENÚ -->
+                        <nav class="nav-menu" id="navMenu">
+                            <a href="#requisitos">Requisitos</a>
+                            <a href="index.html">Nuestros Proyectos</a>
+                            <a href="equipo.html">Nuestro Equipo</a>
+                            <a href="#contacto">Contáctanos</a>
+                        </nav>
+
+                    </header>
                 </div>
             </div>
         </div>
@@ -98,31 +110,43 @@
         <div class="container">
             <div class="columns">
                 <div class="column col-12 fade-in">
-                    <h2 class="titulo-seccion" style="margin-top: 2rem;">REQUISITOS PARA CALIFICAR</h2>
+                    <h2 class="titulo-seccion" style="margin-top: 2rem;">REQUISITOS PARA OBTENER TU CASA PROPIA</h2>
                     <p class="feature-subtitle">
                         Para acceder a nuestros proyectos con <strong>Techo Propio</strong>, los postulantes deben cumplir los siguientes requisitos:
                     </p>
                 </div>
             </div>
 
-            <div class="columns col-gapless">
+                <div class="columns col-gapless">
+
                 <div class="column col-3 col-sm-12 text-center">
-                    <img class="fade-in" src="./images/noapoyo.png" alt="No haber recibido apoyo habitacional del Estado">
+                    <div class="img-wrapper anim-izq">
+                        <img class="fade-in" src="./images/noapoyo.png" alt="No haber recibido apoyo habitacional del Estado">
+                    </div>
                     <h5 class="feature-title fade-in">No haber recibido apoyo del Estado</h5>
                 </div>
+
                 <div class="column col-3 col-sm-12 text-center">
-                    <img class="fade-in" src="./images/ingresomenor.png" alt="Ingresos menores a S/ 3715">
+                    <div class="img-wrapper anim-izq">
+                        <img class="fade-in" src="./images/ingresomenor.png" alt="Ingresos menores a S/ 3715">
+                    </div>
                     <h5 class="feature-title fade-in">Contar con ingresos menores a S/ 3,715.00</h5>
                 </div>
+
                 <div class="column col-3 col-sm-12 text-center">
-                    <img class="fade-in" src="./images/grupofa.png" alt="Conformar un grupo familiar">
+                    <div class="img-wrapper anim-izq">
+                        <img class="fade-in" src="./images/grupofa.png" alt="Conformar un grupo familiar">
+                    </div>
                     <h5 class="feature-title fade-in">Conformar un grupo familiar responsable</h5>
                 </div>
+
                 <div class="column col-3 col-sm-12 text-center">
-                    <img class="fade-in" src="./images/vivienda.png" alt="No contar con vivienda o terreno">
+                    <div class="img-wrapper anim-izq">
+                        <img class="fade-in" src="./images/vivienda.png" alt="No contar con vivienda o terreno">
+                    </div>
                     <h5 class="feature-title fade-in">No contar con vivienda, terreno o aires independizados</h5>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
 
@@ -160,14 +184,14 @@
 
                         <!-- LISTA -->
                         <ul style="line-height: 2; font-size: 22px; padding-left: 20px; text-align: left;">
-                            <ul>
+                            
                                 <li class="feature-item">✔ Sala</li>
                                 <li class="feature-item">✔ Cocina</li>
                                 <li class="feature-item">✔ Dormitorios</li>
                                 <li class="feature-item">✔ Baños y lavandería</li>
                                 <li class="feature-item">✔ Sistema inteligente</li>
                                 <li class="feature-item">✔ Excelente distribución de espacios</li>
-                            </ul>
+                            
                         </ul>
 
                     </div>
@@ -315,6 +339,25 @@
     </div>
   </div>
 </div>
+
+
+<script>
+const toggle = document.getElementById("navToggle");
+const menu = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+});
+const links = document.querySelectorAll(".nav-menu a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    });
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const elementos = document.querySelectorAll('.fade-in');

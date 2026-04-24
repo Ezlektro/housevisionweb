@@ -36,36 +36,43 @@
         <span class="float-label">DIANIRA</span>
     </a>
 
-    
-
-</div>
+    </div>
     
 
 <div class="yeo-slogan">
-    <div class="container yeo-header">
-        <div class="columns">
-            <div class="column col-sm-12">
+        <div class="container yeo-header">
+            <div class="columns">
+                <div class="column col-12">
+                    <header class="navbar-custom">
 
-<header class="navbar">
-    <section class="navbar-section">
-        <a class="navbar-brand logo" href="index.html">
-            <img class="logo-img" src="./images/logo.webp" alt="">
-            <span>House Vision</span>
-        </a>
-    </section>
+                        <!-- LOGO -->
+                        <div class="nav-left">
+                            <a class="navbar-brand logo" href="index.html">
+                                <img class="logo-img" src="./images/logo.webp" alt="">
+                                <span>House Vision</span>
+                            </a>
+                        </div>
 
-    <section class="navbar-section hide-sm">
-        <a class="btn btn-link" href="index.html">Nuestros Proyectos</a>
-        <a class="btn btn-link" href="equipo.html">Nuestro Equipo</a>
-        <a class="btn btn-link" href="#contacto">Contáctanos</a>
-    </section>
-</header>
+                        <!-- BOTÓN HAMBURGUESA -->
+                        <div class="nav-toggle" id="navToggle">
+                            ☰
+                        </div>
 
+                        <!-- MENÚ -->
+                        <nav class="nav-menu" id="navMenu">
+                            <a href="index.html#requisitos">Requisitos</a>
+                            <a href="index.html">Nuestros Proyectos</a>
+                            <a href="equipo.html">Nuestro Equipo</a>
+                            <a href="#contacto">Contáctanos</a>
+                        </nav>
+
+                    </header>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+<div class="bg-suave">
 <!-- 🖼️ LOGO + NOMBRE -->
 <section class="proyecto-img-section" style="text-align:center; margin: -4rem 0;">
     <img src="./images/SANTA_CECILIA.png" class="proyecto-img">
@@ -185,6 +192,7 @@
 </div>
 </div>
 
+</div>
 <!-- 🔻 FOOTER  -->
 <div class="yeo-footer" id="contacto">
   <div class="container">
@@ -256,6 +264,38 @@
 <div class="modal-galeria" id="modalGaleria">
     <img class="modal-img" id="imgGrande">
 </div>
+<script>
+const toggle = document.getElementById("navToggle");
+const menu = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+});
+const links = document.querySelectorAll(".nav-menu a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+});
+</script>
 <script>
 const modal = document.getElementById("modalGaleria");
 const modalImg = document.getElementById("imgGrande");

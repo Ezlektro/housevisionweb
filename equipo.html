@@ -35,34 +35,45 @@
         <span class="float-label">DIANIRA</span>
     </a>
 
-</div>
+  </div>
 
     <!-- HEADER / DASHBOARD -->
     <div class="yeo-slogan">
         <div class="container yeo-header">
             <div class="columns">
                 <div class="column col-12">
-                    <header class="navbar">
-                        <section class="navbar-section">
+                    <header class="navbar-custom">
+
+                        <!-- LOGO -->
+                        <div class="nav-left">
                             <a class="navbar-brand logo" href="index.html">
                                 <img class="logo-img" src="./images/logo.webp" alt="">
                                 <span>House Vision</span>
                             </a>
-                        </section>
-                        <section class="navbar-section hide-sm">
-                            <a class="btn btn-link" href="index.html">Nuestros Proyectos</a>
-                            <a class="btn btn-link" href="equipo.html">Nuestro Equipo</a>
-                            <a class="btn btn-link" href="#contacto">Contáctanos</a>
-                        </section>
+                        </div>
+
+                        <!-- BOTÓN HAMBURGUESA -->
+                        <div class="nav-toggle" id="navToggle">
+                            ☰
+                        </div>
+
+                        <!-- MENÚ -->
+                        <nav class="nav-menu" id="navMenu">
+                            <a href="index.html#requisitos">Requisitos</a>
+                            <a href="index.html">Nuestros Proyectos</a>
+                            <a href="equipo.html">Nuestro Equipo</a>
+                            <a href="#contacto">Contáctanos</a>
+                        </nav>
+
                     </header>
                 </div>
             </div>
         </div>
     </div>
     
-
+    <div class="bg-suave">
     <!-- CONTENIDO DE LA PÁGINA -->
-    <div class="container yeo-body" style="min-height: 25vh; text-align:center; padding: 4rem 0 2rem;">
+    <div class="container yeo-body bg-suave" style="min-height: 25vh; text-align:center; padding: 4rem 0 2rem;">
         <h1 class="titulo-seccion" style="margin-top: 0rem;">
             Nuestro Equipo
         </h1>
@@ -83,16 +94,16 @@
 
         <!-- Miembro 2 -->
         <div class="team-card team-anim">
-            <img src="./images/team/anghelo.webp" alt="">
-            <h4>Anghelo Cajusol</h4>
-            <p>Marketing</p>
+            <img src="./images/team/tatiana.webp" alt="">
+            <h4>Tatiana Sanchez</h4>
+            <p>Administrativa</p>
         </div>
 
         <!-- Miembro 3 -->
         <div class="team-card team-anim">
-            <img src="./images/team/tatiana.webp" alt="">
-            <h4>Tatiana Sanchez</h4>
-            <p>Administrativa</p>
+            <img src="./images/team/anghelo.webp" alt="">
+            <h4>Anghelo Cajusol</h4>
+            <p>Marketing</p>
         </div>
 
         <!-- Miembro 4 -->
@@ -138,10 +149,11 @@
         </div>
     </div>
     <!-- FIN TARJETAS DEL EQUIPO -->
+    <div style="margin-bottom: 8rem;"></div>
+    </div>
 
 
     <!-- FOOTER -->
-    <div style="margin-top: 8rem;"></div> <!-- Espacio antes del footer -->
     <div class="yeo-footer" id="contacto">
   <div class="container">
     <div class="columns">
@@ -208,6 +220,38 @@
     </div>
   </div>
 </div>
+<script>
+const toggle = document.getElementById("navToggle");
+const menu = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+});
+const links = document.querySelectorAll(".nav-menu a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const elementos = document.querySelectorAll('.team-anim');
