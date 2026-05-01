@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Vision | Proyectos Vendidos</title>
+
+    <link rel="stylesheet" href="./css/yeovendidos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Anton&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar-custom navbar-vendidos">
+
+        <div class="nav-left">
+            <a class="navbar-brand logo" href="index.html">
+                <img class="logo-img" src="./images/logo.webp" alt="House Vision">
+                <span>House Vision</span>
+            </a>
+        </div>
+
+        <div class="nav-toggle" id="navToggle">
+            ☰
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#requisitos">Requisitos</a>
+            <a href="index.html#contacto">Contáctanos</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-vendidos">
+        <h1>PROYECTOS VENDIDOS</h1>
+        <p>Familias que hicieron realidad su hogar con nosotros</p>
+    </section>
+    <section class="proyecto-img-section">
+    <img src="./images/santaceciliavictoria.webp" class="proyecto-img" alt="Santa Cecilia Victoria">
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="videos-grid" id="videos">
+
+        <div class="video-card">
+            <video controls>
+                <source src="videos/vid1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h3>Pruebas hidráulicas</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="videos/vid2.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h3>Instalación del sistema de alcantarillado</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="videos/vid3.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h3>Agua y desague</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="videos/vid4.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h3>Instalación de tapas de desague</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video controls>
+                <source src="videos/vid5.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h3>Nivelación de tierra</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SCRIPT MENÚ -->
+    <script>
+        const toggle = document.getElementById("navToggle");
+        const menu = document.getElementById("navMenu");
+
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            document.body.classList.toggle("no-scroll");
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+                document.body.classList.remove("no-scroll");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
