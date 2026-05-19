@@ -31,7 +31,7 @@
 <div class="float-container">
 
     <!-- WHATSAPP -->
-     <a href="https://wa.me/51955076853?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
+     <a href="https://wa.me/51933430603?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision"
         class="float-btn whatsapp2" target="_blank">
         <img src="./images/administrativalogo.png" class="float-icon">
         <span class="float-label2">ADMINISTRATIVA</span>
@@ -61,7 +61,7 @@
                         <div class="nav-left">
                             <a class="navbar-brand logo" href="index.html">
                                 <img class="logo-img" src="./images/logo.webp" alt="">
-                                <span>House Vision</span>
+                                <span style="color: #f2c94c"> House Vision</span>
                             </a>
                         </div>
 
@@ -73,7 +73,6 @@
                         <!-- MENÚ -->
                         <nav class="nav-menu" id="navMenu">
                             <a href="#requisitos">Requisitos</a>
-                            <a href="index.html">Nuestros Proyectos</a>
                             <a href="equipo.html">Nuestro Equipo</a>
                             <a href="#contacto">Contáctanos</a>
                         </nav>
@@ -91,18 +90,21 @@
                         <h1 style="margin-bottom: -20px;">
                             <span class="slogan-bold">Casas y Depas con techo propio en Chiclayo</span><br>
                         </h1>
-                        <p>Visita nuestros <strong>Proyectos!</strong></p>
+                        <p>Visita nuestros <span style="color: #f2c94c; font-weight: 700;">Proyectos!</span></p>
                         <div class="proyectos-botones">
-                            <a href="proyectos.html" class="btn-proyecto">>>> Santa Cecilia de Pimentel</a>
-                            <a href="proyectos2.html" class="btn-proyecto">>>> Torre San Martín</a>
-                            <a href="proyectos3.html" class="btn-proyecto">>>> Trébol</a>
-                            <a href="proyectos4.html" class="btn-proyecto">>>> Proyectos Vendidos</a>
+                            <a href="proyectos.html" class="btn-proyecto"><span style="color: #f2c94c; font-weight: 700;">>>></span> Santa Cecilia de Pimentel</a>
+                            <a href="proyectos2.html" class="btn-proyecto"><span style="color: #f2c94c; font-weight: 700;">>>></span> Torre San Martín</a>
+                            <a href="proyectos3.html" class="btn-proyecto"><span style="color: #f2c94c; font-weight: 700;">>>></span> Trébol</a>
+                            <a href="proyectos4.html" class="btn-proyecto"><span style="color: #f2c94c; font-weight: 700;">>>></span> Proyectos Vendidos</a>
                         </div>
                     </div>
                 </div>
-                <div class="column col-5 hide-sm">
-                    <img class="slogan-img fade-in" src="./images/imgprinc.jpg" alt="Imagen de una casa moderna">
-                </div>
+                    <div class="column col-5 hide-sm">
+                        <div class="hero-stack fade-in">
+                            <img src="./images/imgprinc1.webp" class="hero-img front" alt="Casa 1">
+                            <img src="./images/imgprinc2.webp" class="hero-img back" alt="Casa 2">
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -159,13 +161,16 @@
             <div class="column col-6 col-sm-12">
                 <img src="./images/casa1.jpg" alt="Casa modelo"
                      class="img-responsive fade-in lift-hover"
-                     style="border-radius: 10px; height: 100%; object-fit: cover;">
+                     style="border-radius: 10px; height: 100%; object-fit: cover; border: 2px solid #f2c94c;
+                     box-shadow:
+                        0 0 0 1px rgba(242, 201, 76, 0.35),
+                        0 10px 25px rgba(0,0,0,0.18);">
             </div>
 
             <!-- TARJETA -->
             <div class="column col-6 col-sm-12">
                 <div class="panel"
-                     style="background-color: #ffffff; color: #000; border-radius: 10px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                     style="background-color: #0b0b0b; border: 2px solid #f2c94c; border-radius: 10px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 25px rgba(242,201,76,0.15);">
 
                     <div class="panel-body" style="padding: 30px;">
 
@@ -176,7 +181,7 @@
                         </h3>
 
                         <!-- LÍNEA -->
-                        <div style="height: 2px; background-color: #eee; margin-bottom: 20px;"></div>
+                        <div style="height: 2px; background-color: #f2c94c; margin-bottom: 20px;"></div>
 
                         <!-- TEXTO -->
                         <p style="margin-bottom: 22px; font-size: 20px;">
@@ -313,7 +318,7 @@
               <a href="https://wa.me/51955076853?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision" target="_blank" class="contact-text">📞 955 076 853</a>
             </li>
             <li class="nav-item">
-              <a href="#" target="_blank" class="contact-text">📞 Administrativa</a>
+              <a href="https://wa.me/51933430603?text=Hola%20quiero%20más%20información%20sobre%20House%20Vision" target="_blank" class="contact-text">📞 Administrativa</a>
             </li>
           </ul>
         </div>
@@ -423,6 +428,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.2 });
 
     planetas.forEach(p => observer.observe(p));
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const front = document.querySelector(".hero-img.front");
+    const back = document.querySelector(".hero-img.back");
+
+    setInterval(() => {
+        front.classList.toggle("front");
+        front.classList.toggle("back");
+
+        back.classList.toggle("front");
+        back.classList.toggle("back");
+    }, 5000);
 });
 </script>
 </body>
