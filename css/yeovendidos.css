@@ -32,7 +32,7 @@ body {
 }
 
 .logo-img {
-    height: 55px;
+    height: 35px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -88,22 +88,16 @@ body {
 /* HERO */
 .hero-vendidos {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 10px 20px 40px;
     animation: fadeHero 1s ease;
 }
 
 .hero-vendidos h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
-    letter-spacing: 4px;
+    font-family: "Anton", sans-serif;
+    font-size: 70px;
+    letter-spacing: 10px;
     margin: 0;
     color: #fff;
-}
-
-.hero-vendidos p {
-    font-size: 1.2rem;
-    color: #bbb;
-    margin-top: 15px;
 }
 
 /* GRID */
@@ -114,6 +108,15 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 35px;
+}
+@media (max-width: 768px) {
+
+    .videos-grid {
+        padding: 20px;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 /* CARD */
@@ -257,7 +260,7 @@ body {
 }
 
 .proyecto-img {
-    width: 800px;
+    width: 600px;
     max-width: 90%;
     height: auto;
     background: none;
@@ -341,6 +344,29 @@ body {
 /* HOVER */
 .float-btn:hover {
     transform: scale(1.12);
+}
+.bg-suave {
+    background:
+        radial-gradient(
+            ellipse 25% 120% at -10% 50%,
+            rgba(242,201,76,0.12) 0%,
+            transparent 70%
+        ),
+
+        radial-gradient(
+            ellipse 25% 120% at 110% 50%,
+            rgba(242,201,76,0.12) 0%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            90deg,
+            #141005 0%,
+            #090909 50%,
+            #141005 100%
+        );
+
+    padding: 3rem 0;
 }
 
 /* ANIMACIÓN */
