@@ -84,49 +84,81 @@
 
         <!-- Sección principal -->
         <div class="container slogan" id="inicio">
-            <div class="columns">
-                <div class="column col-7 col-sm-12">
+            <div class="columns" style="align-items: center;">
+                <div class="column col-6 col-sm-12">
                     <div class="slogan-content">
                         <div class="hero-techo">
                             <img src="./images/techo.png" class="hero-techo-logo" alt="Techo Propio">
-
                             <h1 class="hero-techo-text">
                                 ADQUIERE TU CASA O DEPA
                             </h1>
-
                             <p class="hero-subtext">
                                 Visita nuestros <span>Proyectos</span>
                             </p>
                         </div>
                         <div class="proyectos-botones">
                             <a href="proyectos.html" class="btn-proyecto">
-                                <span style="color: #f2c94c; font-weight: 700;">>>></span>
+                                <span class="btn-flecha">>>></span>
                                 <img src="./images/minilogo1.webp" class="logo-proyecto">
-                                 Santa Cecilia de Pimentel</a>
+                                Santa Cecilia de Pimentel
+                            </a>
                             <a href="proyectos2.html" class="btn-proyecto">
-                                <span style="color: #f2c94c; font-weight: 700;">>>></span>
+                                <span class="btn-flecha">>>></span>
                                 <img src="./images/minilogo2.webp" class="logo-proyecto">
-                                 Torre San Martín</a>
+                                Torre San Martín
+                            </a>
                             <a href="proyectos3.html" class="btn-proyecto">
-                                <span style="color: #f2c94c; font-weight: 700;">>>></span>
+                                <span class="btn-flecha">>>></span>
                                 <img src="./images/minilogo3.webp" class="logo-proyecto">
-                                 Trébol</a>
+                                Trébol
+                            </a>
                             <a href="proyectos4.html" class="btn-proyecto">
-                                <span style="color: #f2c94c; font-weight: 700;">>>></span>
+                                <span class="btn-flecha">>>></span>
                                 <img src="./images/minilogo4.webp" class="logo-proyecto">
-                                 Proyectos Vendidos</a>
+                                Proyectos Vendidos
+                            </a>
                         </div>
                     </div>
                 </div>
-                    <div class="column col-5 hide-sm">
-                        <div class="hero-stack fade-in">
-                            <img src="./images/imgprinc1.webp" class="hero-img front" alt="Casa 1">
-                            <img src="./images/imgprinc2.webp" class="hero-img back" alt="Casa 2">
+
+                <div class="column col-6 col-sm-12">
+                    <div class="hero-carousel fade-in">
+
+                        <div class="hero-slide active">
+                            <img src="./images/galeria/vistageneral_primerpiso.webp" class="hero-slide-img">
+                            <div class="hero-info">
+                                <img src="./images/minilogo1.webp" class="hero-slide-logo">
+                                <span>Santa Cecilia de Pimentel</span>
+                            </div>
                         </div>
+
+                        <div class="hero-slide">
+                            <img src="./images/galeria/torre/sala1.webp" class="hero-slide-img">
+                            <div class="hero-info">
+                                <img src="./images/minilogo2.webp" class="hero-slide-logo">
+                                <span>Torre San Martín</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-slide">
+                            <img src="./images/galeria/trebol/sala2.webp" class="hero-slide-img">
+                            <div class="hero-info">
+                                <img src="./images/minilogo3.webp" class="hero-slide-logo">
+                                <span>Trébol</span>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <!-- DOTS -->
+                    <div class="hero-dots">
+                        <span class="hero-dot active"></span>
+                        <span class="hero-dot"></span>
+                        <span class="hero-dot"></span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
     <div class="yeo-do" id="requisitos">
         <div class="container">
@@ -451,16 +483,27 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const front = document.querySelector(".hero-img.front");
-    const back = document.querySelector(".hero-img.back");
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll(".hero-dot");
+    let current = 0;
 
+    function goTo(index) {
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
+        current = index;
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
+    }
+
+    // Click en dots
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => goTo(i));
+    });
+
+    // Auto-avance
     setInterval(() => {
-        front.classList.toggle("front");
-        front.classList.toggle("back");
-
-        back.classList.toggle("front");
-        back.classList.toggle("back");
-    }, 5000);
+        goTo((current + 1) % slides.length);
+    }, 4000);
 });
 </script>
 </body>
