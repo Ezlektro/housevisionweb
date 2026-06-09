@@ -62,7 +62,6 @@ a:active {
     background: linear-gradient(135deg, #111111 0%, #1b1b1b 70%, #2a2100 100%);
     border-bottom: 1px solid var(--border-gold);
 }
-
 .yeo-slogan .slogan-bold {
     display: block;
 }
@@ -74,10 +73,11 @@ a:active {
 
 .slogan {
     background: transparent;
-    padding-top: 3rem;
     color: var(--text-light);
     text-align: left;
     max-width: 1280px;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;    /* ← añade esto */
 }
 
 
@@ -1771,11 +1771,11 @@ html {
     margin-top: -15px;
 }
 .proyectos-botones {
-    margin-top: -20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 75px;
+    gap: 8px;
+    margin-bottom: 30px;
 }
 @media (max-width: 768px) {
     .proyectos-botones{
@@ -1785,7 +1785,7 @@ html {
 
 /* BOTÓN BASE */
 .btn-proyecto {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
@@ -1796,6 +1796,7 @@ html {
 
     transition: all 0.3s ease;
 }
+
 .btn-proyecto:visited {
     color: #fff;
 }
@@ -2261,44 +2262,137 @@ html {
     margin-bottom: 100px;
     }
 }
-.hero-stack {
+.hero-carousel {
     position: relative;
     width: 100%;
-    height: 520px;
-}
-@media (max-width: 768px){
-
-    .hero-stack{
-        display: none !important;
-    }
-
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 300px;       /* ← añade esto */
+    min-width: 900px;
+    border-radius: 18px;
+    overflow: hidden;
 }
 
-.hero-img {
+.hero-slide {
     position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.97);
+    transition: all 0.8s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-slide-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 18px;
     border: 2px solid #f2c94c;
     box-shadow:
-        0 0 0 1px rgba(242, 201, 76, 0.35),
-        0 10px 25px rgba(0,0,0,0.18);
-    transition: all 1.2s ease;
+        0 0 0 1px rgba(242,201,76,.35),
+        0 10px 25px rgba(0,0,0,.18);
+    display: block;          /* ← evita gap inferior */
 }
 
-/* Imagen al frente */
-.hero-img.front {
-    z-index: 2;
-    transform: translate(0, 0) scale(1);
+/* INFO BADGE */
+.hero-info {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;                        /* ← centrado horizontal */
+    transform: translateX(-50%);      /* ← ajuste para centrar perfectamente */
+    
+    display: flex;
+    flex-direction: column;           /* ← logo arriba, texto abajo */
+    align-items: center;              /* ← ambos centrados */
+    gap: 10px;
+    
+    background: rgba(0,0,0,.75);
+    padding: 14px 28px;
+    border-radius: 14px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(242,201,76,0.25);
+    
+    width: fit-content;
+    min-width: 280px;                 /* ← para que no quede muy estrecho */
+    text-align: center;
 }
 
-/* Imagen atrás */
-.hero-img.back {
-    z-index: 1;
-    transform: translate(85px, 85px) scale(0.92);
-    opacity: 0.75;
+.hero-slide-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
 }
+
+.hero-info span {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* DOTS */
+.hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    margin-left: 300px;
+}
+
+.hero-dot {
+    width: 30px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.25);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.hero-dot.active {
+    background: #f2c94c;
+    width: 48px;
+}
+@media (max-width: 768px) {
+    .hero-carousel {
+        min-width: unset;     /* ← quita el min-width: 900px que lo rompe */
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: unset;
+        margin-top: 20px;
+    }
+
+    .hero-dots {
+        margin-left: 0;       /* ← quita el desplazamiento */
+        justify-content: center;
+        margin-top: 12px;
+    }
+
+    .hero-info span {
+        display: none;
+    }
+
+    .hero-slide-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero-info {
+        padding: 10px 14px;
+        min-width: unset;
+    }
+}
+
+.slogan-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+
 .btn-proyecto {
     display: flex;
     align-items: center;
@@ -2329,49 +2423,43 @@ html {
 .hero-techo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    align-items: center;   /* alineado a la izquierda */
     text-align: center;
-
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .hero-techo-logo {
-    margin-top: -50px;
-    margin-bottom: 20px;
-    width: 210px;
+    width: 160px;
     max-width: 90%;
-
+    margin-bottom: 12px;
     object-fit: contain;
-
     filter:
         drop-shadow(0 0 12px rgba(242,201,76,0.25))
         drop-shadow(0 0 30px rgba(242,201,76,0.15));
-
     animation: flotarHero 4s ease-in-out infinite;
+    margin-top: 0;              /* quita el margin-top negativo */
 }
 
 .hero-techo-text {
-    margin-top: 10px;
-    font-size: 60px;
+    font-size: 48px;
     line-height: 1.1;
     color: #fff;
     font-family: "Anton", sans-serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-shadow:
         0 0 12px rgba(242,201,76,0.25),
         0 3px 10px rgba(0,0,0,0.4);
+    margin-bottom: 8px;
 }
 
 .hero-subtext {
-    margin-top: 12px !important;
-
-    font-size: 32px !important;
+    font-size: 22px !important;
     font-weight: 500 !important;
     color: rgba(255,255,255,0.85);
     width: 100% !important;
+    margin-top: 4px !important;
+    text-align: center;
 }
 
 .hero-subtext span {
@@ -2395,22 +2483,38 @@ html {
 
 /* MOBILE */
 @media (max-width: 768px) {
-
     .hero-techo {
-        margin-top: 80px;
+        align-items: center;
+        text-align: center;
+        margin-top: 60px;
     }
 
     .hero-techo-logo {
-        width: 180px;
+        width: 140px;
     }
 
     .hero-techo-text {
-        font-size: 34px;
+        font-size: 30px;
         letter-spacing: 1px;
     }
 
     .hero-subtext {
-        font-size: 16px !important;
+        font-size: 15px !important;
+        text-align: center;
+    }
+
+    .btn-proyecto {
+        font-size: 18px;
+    }
+
+    .logo-proyecto {
+        width: 40px;
+        height: 40px;
+    }
+
+    .proyectos-botones {
+        margin-bottom: 10px;
+        align-items: flex-start;
     }
 }
 html {
