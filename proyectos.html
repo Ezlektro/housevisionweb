@@ -80,18 +80,64 @@
 </h1>
 </section>
 
+<!-- 📍 UBICACIÓN / VIDEO / TESTIMONIOS -->
 <div class="container" style="margin-top:3rem;">
-    <h2 class="titulo-seccion">UBICACIÓN</h2>
+    <h2 class="titulo-seccion">CONOCE MÁS</h2>
 
-    <div class="mapa-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.967726442237!2d-79.8832449!3d-6.7737826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef006310d451%3A0x18f97612b6100111!2sCondominio%20Santa%20Cecilia%20de%20Pimentel!5e0!3m2!1ses!2spe!4v1779160582584!5m2!1ses!2spe%22"
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+    <div class="info-3col">
+
+        <!-- UBICACIÓN -->
+        <div class="info-card fade-in-img">
+            <h3 class="titulo-subseccion-mini">Ubicación</h3>
+            <div class="mapa-container mapa-mini">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.967726442237!2d-79.8832449!3d-6.7737826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef006310d451%3A0x18f97612b6100111!2sCondominio%20Santa%20Cecilia%20de%20Pimentel!5e0!3m2!1ses!2spe!4v1779160582584!5m2!1ses!2spe%22"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="info-card fade-in-img">
+            <h3 class="titulo-subseccion-mini">Video</h3>
+            <div class="video-mini">
+                <video controls>
+                    <source src="./videos/comollegar1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- TESTIMONIOS -->
+        <div class="info-card fade-in-img">
+            <h3 class="titulo-subseccion-mini">Testimonios</h3>
+            <div class="testimonios-carousel">
+
+                <button class="testi-btn testi-prev" aria-label="Anterior">‹</button>
+
+                <div class="testi-track" id="testiTrack">
+                    <video class="testi-video" controls>
+                        <source src="./videos/comollegar1.mp4" type="video/mp4">
+                    </video>
+                    <video class="testi-video" controls>
+                        <source src="./videos/testimonio2.mp4" type="video/mp4">
+                    </video>
+                    <video class="testi-video" controls>
+                        <source src="./videos/testimonio3.mp4" type="video/mp4">
+                    </video>
+                    <video class="testi-video" controls>
+                        <source src="./videos/testimonio4.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <button class="testi-btn testi-next" aria-label="Siguiente">›</button>
+
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -350,6 +396,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.2 });
 
     elementos.forEach(el => observer.observe(el));
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll(".testi-video");
+    let testiIndex = 0;
+
+    function showTesti(index) {
+        videos.forEach(v => {
+            v.classList.remove("active");
+            v.pause();
+        });
+        videos[index].classList.add("active");
+    }
+
+    showTesti(testiIndex);
+
+    document.querySelector(".testi-prev").addEventListener("click", () => {
+        testiIndex = (testiIndex - 1 + videos.length) % videos.length;
+        showTesti(testiIndex);
+    });
+
+    document.querySelector(".testi-next").addEventListener("click", () => {
+        testiIndex = (testiIndex + 1) % videos.length;
+        showTesti(testiIndex);
+    });
 });
 </script>
 </body>
