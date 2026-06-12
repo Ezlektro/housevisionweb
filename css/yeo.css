@@ -2525,3 +2525,157 @@ html {
         zoom: 100%;
     }
 }
+/* ============================
+   3 COLUMNAS: UBICACIÓN / VIDEO / TESTIMONIOS
+   ============================ */
+.info-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 84px;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: #161616;
+    border: 1px solid rgba(212,175,55,0.18);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+.titulo-subseccion-mini {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+/* MAPA MINI */
+.mapa-mini {
+    width: 100%;
+    height: 600px;            /* ← antes 420px, ahora x2 */
+    margin-top: 0;
+    border-radius: 10px;
+    flex: 1;
+}
+
+/* VIDEO ÚNICO */
+.video-mini {
+    width: 100%;
+    height: 600px;            /* ← antes 420px, ahora x2 */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(212,175,55,0.45);
+    box-shadow:
+        0 0 15px rgba(212,175,55,0.18),
+        0 0 35px rgba(212,175,55,0.08);
+    flex: 1;
+}
+
+.video-mini video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* ← cambio de cover a contain */
+    display: block;
+    background: #000;        /* ← rellena el espacio sobrante */
+}
+
+/* ============================
+   TESTIMONIOS — CARRUSEL MANUAL
+   ============================ */
+.testimonios-carousel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 600px;            /* ← antes 420px, ahora x2 */
+    flex: 1;
+}
+
+.testi-track {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.testi-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* ← cambio de cover a contain */
+    border-radius: 10px;
+    border: 2px solid rgba(212,175,55,0.45);
+    background: #000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.testi-video.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    position: absolute;
+}
+
+/* BOTONES FLOTANTES */
+.testi-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: rgba(0,0,0,0.5);
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+    backdrop-filter: blur(4px);
+}
+
+.testi-prev {
+    left: 12px;
+}
+
+.testi-next {
+    right: 12px;
+}
+
+.testi-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+/* ============================
+   MOBILE — APILADO VERTICAL
+   ============================ */
+@media (max-width: 768px) {
+    .info-3col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mapa-mini,
+    .video-mini,
+    .testimonios-carousel {
+        height: 440px;
+    }
+}
